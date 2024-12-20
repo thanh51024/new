@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HỌC JS</title>
+    </head>
+    <body>
+        <!-- /*document.write("xin chao");
+        <script type="text/JS">
+            document.write("xin chao");
+        </script>
+        <script lang="JS">
+            document.write("xin chao");
+        </script>*/ -->
+        <div style="border: 1px solid black; margin-right: 300px;padding: 0px;"> 
+            <button style="text-align: center;margin:4px;" onclick="clickButton()">CLICK TO SORT</button>
+            <p id="arrnow">Mảng ban đầu:</p>
+            <p id="arrafter">Mảng sau sắp xếp:</p>
+            <p id="sumarr">Tổng mảng:</p>
+            <p id="in"></p>
+            <p id="string1">string1: "2+2" = </p>
+            <p id="string2">string2: new String("2+2") = </p>
+            <script>
+                var arr=[1,5,6,2,10,3];
+                document.getElementById("arrnow").innerHTML+=arr;
+                document.getElementById("arrafter").innerHTML+=arr;
+                document.writeln(navigator.appName);
+                document.writeln(navigator.appVersion);
+                document.writeln(navigator.appCodeName);
+                document.writeln(navigator.cookieEnabled);
+                document.writeln();
+                document.writeln(navigator.platform);
+                document.writeln(navigator.language);
+                document.writeln();
+                document.writeln(location.hostname);
+                document.writeln(location.href);
+                document.writeln(location.pathname);
+                document.writeln(location.protocol);
+
+                function sorter(a,b){
+                    return a-b;
+                }
+                function clickButton(){
+                    arr.sort(sorter);
+                    var sumArr=sum(arr);
+                    alert.toString();
+                    alert("sum array: "+sumArr); // hiển thị khung alert
+                    //document.getElementById("arrafter").innerHTML=arr;
+                    document.getElementById("arrafter").innerHTML=arr;
+                    document.getElementById("sumarr").innerHTML+=sumArr;
+
+                    var text="";
+                    for(var i=0;i<arr.length;i++){
+                        text+=arr[i]+"<br>";
+                    }
+                    document.getElementById("in").innerHTML=text;
+                    //window.open("","","width=550,height=550");
+                    //window.alert(window.location);
+                }
+                function sum(arr){
+                    var sum=0;
+                    for(var i=0; i<arr.length; i++){
+                        sum+=arr[i];
+                    }
+                    return sum;
+                }
+
+                s1="too"
+                s2=new String("too")
+                s1="2+2"
+                s2= new String("2+2")
+                eval(s1)
+                eval(s2)
+                document.getElementById("string1").innerHTML+=eval(s1);
+                document.getElementById("string2").innerHTML+=eval(s2);
+
+            </script>
+        </div>
+    
+    </body>
+</html>

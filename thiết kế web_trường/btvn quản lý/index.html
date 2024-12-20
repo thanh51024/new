@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Lớp Học</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Quản Lý Lớp Học</h1>
+
+        <!-- Tạo học sinh -->
+        <section id="student-creation">
+            <h2>Tạo Học Sinh</h2>
+            <form id="create-student-form">
+                <div class="form-row">
+                    <input type="text" id="student-name" class="form-control" placeholder="Tên học sinh" required>
+                    <input type="date" id="student-birthDate" class="form-control" required>
+                    <input type="text" id="student-className" class="form-control" placeholder="Lớp" required>
+                    <input type="text" id="student-school" class="form-control" placeholder="Trường" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addStudent()">Tạo Học Sinh</button>
+            </form>
+            <h3>Danh Sách Học Sinh</h3>
+            <ul id="student-list"></ul>
+        </section>
+
+        <!-- Tạo lớp học -->
+        <section id="class-creation">
+            <h2>Tạo Lớp Học</h2>
+            <form id="create-class-form">
+                <div class="form-row">
+                    <input type="text" id="class-name" class="form-control" placeholder="Tên lớp" required>
+                    <input type="text" id="class-room" class="form-control" placeholder="Phòng học" required>
+                    <input type="number" id="class-size" min="1" placeholder="Sĩ số" required>
+                    <input type="date" id="class-time" class="form-control" title="Vui lòng chọn ngày bắt đầu" required>
+                    <input type="time" id="class-start-time" class="form-control" title="Vui lòng chọn giờ bắt đầu" required>
+                    <input type="time" id="class-end-time" class="form-control" title="Vui lòng chọn giờ kết thúc" required>                    
+                </div>
+                <label>Chọn các ngày trong tuần:</label>
+                <div class="form-row">
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 2"> Thứ 2</label>
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 3"> Thứ 3</label>
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 4"> Thứ 4</label>
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 5"> Thứ 5</label>
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 6"> Thứ 6</label>
+                    <label><input type="checkbox" name="class-schedule" value="Thứ 7"> Thứ 7</label>
+                    <label><input type="checkbox" name="class-schedule" value="Chủ Nhật"> Chủ Nhật</label>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addClass()">Tạo Lớp</button>
+
+            </form>
+            <h3>Danh Sách Lớp Học</h3>
+            <ul id="class-list"></ul>
+        </section>
+
+        <!-- Phần thêm học sinh vào lớp học -->
+        <section id="add-student-to-class">
+            <h2>Thêm Học Sinh Vào lớp</h2>
+            <select id="student-select" class="form-control"></select>
+            <select id="class-select" class="form-control"></select>
+            <button class="btn btn-primary" onclick="addStudentToClass()">Thêm vào Lớp</button>
+        </section>
+        
+        <!-- Phần chọn ngày -->
+        <section id="class-schedule-selection">
+            <h2>Xem Lớp Học Theo Ngày</h2>
+            <input type="date" id="class-schedule-date" class="form-control" onchange="showClassesForDay()">
+        <h3>Danh Sách Lớp Học:</h3>
+    <ul id="class-list-container"></ul>
+        <!-- Danh sách các lớp học sẽ được thêm vào đây -->
+        <div id="class-schedule-list"></div>
+</section>
+    <span class="mode-toggle" onclick="toggleMode()">🌙</span>
+
+    <script src="app.js"></script>
+</body>
+</html>

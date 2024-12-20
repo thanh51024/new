@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thứ trong tuần</title>
+    </head>
+    <body>
+        <p id="today" style="margin: 20px;">Tìm ngày trong tuần</p>
+        <button onclick="clickButton()" style="margin-left: 50px;">Today</button>
+        <script>
+            var day=["chủ nhật", "thứ 2", "thứ 3", "thứ 4", "thứ 5", "thứ 6", "thứ 7"];
+            function clickButton(){
+                today= new Date();
+                var thu="Hôm nay là ngày "+day[today.getDay()];
+                var nam="<br> Năm: "+today.getFullYear();
+                var thang="<br> Tháng: "+(today.getMonth()+1);
+                var ngay="<br> Ngày: "+today.getDate();
+
+                document.getElementById("today").innerHTML= thu + nam + thang + ngay;
+                document.getElementById("today").style.color="green";
+                document.getElementById("today").style.fontSize = "24px";
+            }
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tính toán</title>
+        <style>
+            body{
+                text-align: center;
+                margin-top: 100px;
+            }
+            .nut{
+                width: 40px;
+                height: 40px;
+                background-color: rgb(0, 191, 255);
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tính toán đơn giản</h1>
+        <h5>Nhập hai số A và B vào hai ô dưới dây</h5>
+        A = <input type="text" name="txtSoA" value="">
+        <br><br>  
+        B = <input type="text" name="txtSoB" value="">
+        <br><br>
+        
+        <button onclick="onclickButton('+')" name="btnCong" class="nut" value="+">+</button>
+        <button onclick="onclickButton('-')" name="btnTru"  class="nut" value="-">-</button>
+        <button onclick="onclickButton('x')" name="btnNhan" class="nut" value="x">x</button>
+        <button onclick="onclickButton(':')" name="btnChia" class="nut" value=":">:</button>
+        
+        <p id="tketqua" style="margin: 20px;"></p>
+
+        <script>
+            function tinhToan(phepToan){
+                var a = parseInt(document.getElementsByName("txtSoA")[0].value);
+                var b = parseInt(document.getElementsByName("txtSoB")[0].value);
+                
+                if(isNaN(a)||isNaN(b)){
+                    alert("Không hợp lệ! Vui lòng nhập số A B");
+                    return;
+                }
+
+                var ketQua;
+                switch(phepToan){
+                    case '+':
+                        ketQua = a + b;
+                        break;
+                    case '-':
+                        ketQua = a - b;
+                        break;
+                    case 'x':
+                        ketQua = a * b;
+                        break;
+                    case ':':
+                        if(b == 0){
+                            alert("Chia cho 0 không hợp lệ!");
+                            return;
+                        }
+                        ketQua = a / b;
+                        break;
+                }
+                document.getElementById("tketqua").innerHTML = "Kết quả của phép tính: " + ketQua;
+                window.alert("Kết quả: " + ketQua);
+            }
+        function onclickButton(value){
+            tinhToan(value);
+        }
+        </script>
+    </body>
+</html>

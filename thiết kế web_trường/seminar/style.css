@@ -1,0 +1,101 @@
+h1{
+  text-align: center; 
+  padding-top: 25px;
+}
+
+.table-container {
+background-color: #ffffff;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.icon-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* Đảm bảo không méo icon */
+}
+
+.col-auto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Thêm nền nhẹ nếu cần */
+  border-radius: 10px; /* Bo góc */
+}
+.row.g-0 {
+  height: 100%; /* Giúp các thành phần bên trong luôn full-height */
+}  
+
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+ul {  /* Xóa dấu chấm tròn */
+  padding-left: 0;  /* Loại bỏ khoảng cách trái của danh sách */
+}
+
+/* Thêm hiệu ứng hover cho liên kết */
+ul li a.list-item-link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Khi hover, thay đổi màu sắc */
+ul li a.list-item-link:hover {
+  background-color: #62aae5;  /* Nền sáng khi hover */
+}
+/* Thiết lập chung */
+/* Thiết lập chung */
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Đặt chiều rộng tối đa cho vùng chứa */
+  margin: 0 auto; /* Căn giữa vùng chứa theo chiều ngang */
+  padding: 20px; /* Thêm khoảng đệm xung quanh nội dung */
+}
+
+.row {
+  display: flex; /* Sử dụng flexbox để sắp xếp các cột */
+  flex-wrap: wrap; /* Cho phép các cột xuống dòng nếu cần */
+  margin: -10px; /* Sử dụng lề âm để bù đắp cho khoảng đệm cột */
+}
+
+.col-md-6 {
+  width: 50%; /* Mỗi cột chiếm 50% chiều rộng của hàng */
+  padding: 10px; /* Thêm khoảng đệm giữa các cột */
+  box-sizing: border-box; /* Bao gồm phần đệm và đường viền trong chiều rộng và chiều cao của cột */
+}
+
+/* Kiểu dáng cho cột Left */
+.left {
+  background-color: #17a2b8; /* Màu nền xanh lam nhạt (info) */
+  color: white; /* Màu văn bản trắng */
+  text-align: center; /* Căn giữa văn bản */
+  padding: 15px; /* Thêm khoảng đệm bên trong cột */
+}
+
+/* Kiểu dáng cho cột Right */
+.right {
+  background-color: #dc3545; /* Màu nền đỏ (danger) */
+  color: white; /* Màu văn bản trắng */
+  text-align: center; /* Căn giữa văn bản */
+  padding: 15px; /* Thêm khoảng đệm bên trong cột */
+}
+
+/* Truy vấn phương tiện cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .col-md-6 {
+      width: 100%; /* Mỗi cột chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+  }
+}
+
+
